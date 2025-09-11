@@ -1,0 +1,163 @@
+
+---
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: [
+      { name: "React", level: 60, icon: "⚛️" },
+      { name: "TypeScript", level: 55, icon: "📘" },
+      { name: "Next.js", level: 88, icon: "▲" },
+      { name: "Tailwind CSS", level: 70, icon: "🎨" },
+      { name: "HTML/CSS", level: 90, icon: "🌐" }
+    ]
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "Node.js", level: 70, icon: "🟢" },
+      { name: "Python", level: 70, icon: "🐍" },
+      { name: "Express", level: 65, icon: "🚀" },
+      { name: "MongoDB", level: 60, icon: "🍃" },
+      { name: "PostgreSQL", level: 78, icon: "🐘" }
+    ]
+  },
+  {
+    title: "Tools & Others",
+    skills: [
+      { name: "Git", level: 80, icon: "📦" },
+      { name: "Docker", level: 60, icon: "🐳" },
+      { name: "AWS", level: 70, icon: "☁️" },
+      { name: "Figma", level: 85, icon: "🎯" },
+      { name: "Linux", level: 80, icon: "🐧" }
+    ]
+  }
+];
+---
+
+<section id="skills" class="py-20 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        <span class="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+          Skills & Tecnologías
+        </span>
+      </h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Las herramientas y tecnologías que domino para crear soluciones excepcionales
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      {skillCategories.map((category, categoryIndex) => (
+        <div class="fade-in bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-white mb-2">{category.title}</h3>
+            <div class="w-16 h-1 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full mx-auto"></div>
+          </div>
+          
+          <div class="space-y-6">
+            {category.skills.map((skill, skillIndex) => (
+              <div class="skill-item group">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-3">
+                    <span class="text-2xl">{skill.icon}</span>
+                    <span class="font-semibold text-gray-200 group-hover:text-emerald-400 transition-colors">
+                      {skill.name}
+                    </span>
+                  </div>
+                  <span class="text-sm font-mono text-emerald-400">{skill.level}%</span>
+                </div>
+                
+                <div class="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                  <div 
+                    class="skill-bar h-full bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full transition-all duration-1000 ease-out"
+                    style={`width: 0%; --final-width: ${skill.level}%;`}
+                    data-level={skill.level}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Certificaciones o logros adicionales -->
+    <div class="mt-16 text-center">
+      <h3 class="text-2xl font-bold mb-8 text-white">Certificaciones & Logros</h3>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="flex items-center gap-3 px-6 py-3 bg-gray-800/50 rounded-full border border-gray-700/50 hover:border-purple-500/30 transition-colors">
+          <div class="w-3 h-3 bg-purple-400 rounded-full"></div>
+          <span class="text-gray-300">Cisco CCNA (Networking, Switching, Routing, Security) | Cybersecurity Essentials</span>
+        </div>
+        <div class="flex items-center gap-3 px-6 py-3 bg-gray-800/50 rounded-full border border-gray-700/50 hover:border-blue-500/30 transition-colors">
+          <div class="w-3 h-3 bg-blue-400 rounded-full"></div>
+          <span class="text-gray-300">FreeCodeCamp – React (In Progress)</span>
+        </div>
+        <div class="flex items-center gap-3 px-6 py-3 bg-gray-800/50 rounded-full border border-gray-700/50 hover:border-emerald-500/30 transition-colors">
+          <div class="w-3 h-3 bg-emerald-400 rounded-full"></div>
+          <span class="text-gray-300">Ciberseguridad básica (prácticas con Kali Linux y herramientas open source)</span>
+        </div>
+        <div class="flex items-center gap-3 px-6 py-3 bg-gray-800/50 rounded-full border border-gray-700/50 hover:border-emerald-500/30 transition-colors">
+          <div class="w-3 h-3 bg-emerald-400 rounded-full"></div>
+          <span class="text-gray-300">Basic knowledge of Burp Suite & Nmap</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animación de las barras de progreso
+  const observerOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const skillBarsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const skillBars = entry.target.querySelectorAll('.skill-bar');
+        skillBars.forEach((bar, index) => {
+          setTimeout(() => {
+            const level = bar.getAttribute('data-level');
+            bar.style.width = level + '%';
+          }, index * 200); // Delay escalonado para cada barra
+        });
+      }
+    });
+  }, observerOptions);
+
+  // Observar cada categoría de skills
+  document.querySelectorAll('#skills .fade-in').forEach(category => {
+    skillBarsObserver.observe(category);
+  });
+
+  // Efecto de hover en skill items
+  document.querySelectorAll('.skill-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const bar = item.querySelector('.skill-bar');
+      bar.style.boxShadow = '0 0 20px rgba(16, 185, 129, 0.5)';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+      const bar = item.querySelector('.skill-bar');
+      bar.style.boxShadow = 'none';
+    });
+  });
+</script>
+
+<style>
+  
+  @reference 'tailwindcss';
+
+  .skill-bar {
+    transition: width 1s ease-out, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  }
+  
+  .skill-item:hover .skill-bar {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+  }
+</style>
