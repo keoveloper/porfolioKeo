@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import keoveloper from '../assets/keoveloper.png';
 
 ---
 
@@ -19,11 +21,11 @@
       <!-- Imagen/Avatar -->
       <div class="fade-in flex justify-center lg:justify-start">
         <div class="relative group">
-          <div class="w-90 h-90 rounded-2xl bg-gradient-to-br from-emerald-400/20 to-blue-500/20 p-1 rotate-3 group-hover:rotate-6 transition-transform duration-300">
+          <div class="w-90 h-130 rounded-2xl bg-gradient-to-br from-emerald-400/20 to-blue-500/20 p-1 rotate-3 group-hover:rotate-6 transition-transform duration-300">
             <div class="w-full h-full rounded-2xl bg-gray-900 flex items-center justify-center overflow-hidden">
               <!-- Aquí puedes poner tu foto o un avatar -->
-              <img 
-                src="./public/keo.jpg" 
+              <Image
+                src={keoveloper} 
                 alt="Avatar de Diego Octavio Campos Valerio" 
                 class="w-full h-full object-cover"/>
               <!-- <div class="w-full h-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center"> -->
