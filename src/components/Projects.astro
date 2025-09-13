@@ -14,12 +14,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Aplicación de gestión de tareas con funcionalidades colaborativas, notificaciones en tiempo real y integración con calendarios. Perfecto para equipos de trabajo remoto.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    technologies: ["Next.js", "TypeScript", "Prisma", "Socket.io", "PostgreSQL"],
-    features: ["Tiempo real", "Colaborativo", "Notificaciones", "Mobile-first"],
-    github: "https://github.com/usuario/task-manager",
+    title: "Configuracion NVIM",
+    description: "Esta es mi propia configuracion de Nvim hecha en Lua con multiples plugins para mejorar la experiencia de desarrollo.",
+    image: "https://private-user-images.githubusercontent.com/116586032/488938559-12db6d07-c9b8-4a6e-91a1-d24c2a7b9770.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTc2OTY0NjYsIm5iZiI6MTc1NzY5NjE2NiwicGF0aCI6Ii8xMTY1ODYwMzIvNDg4OTM4NTU5LTEyZGI2ZDA3LWM5YjgtNGE2ZS05MWExLWQyNGMyYTdiOTc3MC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwOTEyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDkxMlQxNjU2MDZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YjE5Mjk5ZWRlNWIyZjFkZjNiMGIwMGI2ZWFmMDY3NzVlMWE1OWM2MTg5NmVhMGU5MzZkZDE1YWNkZjhjOTk5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.E7h0weNCWacBQk9q-WGoLUwFx5KVnDSsWaDOU7UoWd8",
+    technologies: ["Lua", "Neovim", "LSP", "Treesitter", "Telescope"],
+    features: ["Configuración personalizada", "Plugins", "Mejora de productividad", "Temas"],
+    github: "https://github.com/keoveloper/config-NVIM",
     demo: "https://taskapp-demo.com",
     category: "Frontend"
   },
@@ -76,7 +76,7 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold mb-6">
-        <span class="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
           Mis Proyectos
         </span>
       </h2>
@@ -88,7 +88,7 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
       <div class="flex flex-wrap justify-center gap-4">
         {categories.map(category => (
           <button 
-            class="filter-btn px-6 py-2 rounded-full border border-gray-600 text-gray-300 hover:border-emerald-500 hover:text-emerald-400 transition-all duration-300"
+            class="filter-btn px-6 py-2 rounded-full border border-gray-600 text-gray-300 hover:border-purple-500 hover:text-purple-400 transition-all duration-300"
             data-filter={category}
           >
             {category}
@@ -101,7 +101,7 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
       {projects.map((project, index) => (
         <div 
-          class="project-card fade-in bg-gray-800/30 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] group"
+          class="project-card fade-in bg-gray-800/30 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-purple-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] group"
           data-category={project.category}
         >
           <!-- Project Image -->
@@ -119,7 +119,7 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
               <a 
                 href={project.github}
                 target="_blank"
-                class="p-2 bg-gray-900/80 backdrop-blur-sm rounded-lg text-white hover:text-emerald-400 transition-colors"
+                class="p-2 bg-gray-900/80 backdrop-blur-sm rounded-lg text-white hover:text-purple-400 transition-colors"
                 aria-label="Ver código en GitHub"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -129,7 +129,7 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
               <a 
                 href={project.demo}
                 target="_blank"
-                class="p-2 bg-gray-900/80 backdrop-blur-sm rounded-lg text-white hover:text-emerald-400 transition-colors"
+                class="p-2 bg-gray-900/80 backdrop-blur-sm rounded-lg text-white hover:text-purple-400 transition-colors"
                 aria-label="Ver demo en vivo"
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,10 +142,10 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
           <!-- Project Content -->
           <div class="p-6">
             <div class="flex items-center justify-between mb-3">
-              <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+              <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
                 {project.title}
               </h3>
-              <span class="px-3 py-1 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 text-emerald-400 rounded-full text-xs font-semibold border border-emerald-500/30">
+              <span class="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-purple-400 rounded-full text-xs font-semibold border border-purple-500/30">
                 {project.category}
               </span>
             </div>
@@ -179,14 +179,14 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
               <a 
                 href={project.demo}
                 target="_blank"
-                class="flex-1 px-4 py-2 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-lg text-sm font-semibold text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25"
+                class="flex-1 px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg text-sm font-semibold text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
               >
                 Ver Demo
               </a>
               <a 
                 href={project.github}
                 target="_blank"
-                class="flex-1 px-4 py-2 border border-gray-600 rounded-lg text-sm font-semibold text-center hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300"
+                class="flex-1 px-4 py-2 border border-gray-600 rounded-lg text-sm font-semibold text-center hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
               >
                 Código
               </a>
@@ -198,7 +198,7 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
 
     <!-- Load More Button -->
     <div class="text-center mt-12">
-      <button class="px-8 py-3 border border-emerald-500/30 rounded-lg font-semibold hover:border-emerald-400 hover:bg-emerald-500/10 transition-all duration-300">
+      <button class="px-8 py-3 border border-purple-500/30 rounded-lg font-semibold hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-300">
         Ver más proyectos
       </button>
     </div>
@@ -216,11 +216,11 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
       
       // Update active button
       filterButtons.forEach(btn => {
-        btn.classList.remove('bg-gradient-to-r', 'from-emerald-500', 'to-blue-600', 'text-white', 'border-transparent');
+        btn.classList.remove('bg-gradient-to-r', 'from-purple-500', 'to-blue-600', 'text-white', 'border-transparent');
         btn.classList.add('border-gray-600', 'text-gray-300');
       });
       
-      button.classList.add('bg-gradient-to-r', 'from-emerald-500', 'to-blue-600', 'text-white', 'border-transparent');
+      button.classList.add('bg-gradient-to-r', 'from-purple-500', 'to-blue-600', 'text-white', 'border-transparent');
       button.classList.remove('border-gray-600', 'text-gray-300');
       
       // Filter projects
@@ -238,7 +238,7 @@ const categories = ["Todos", "Full Stack", "Frontend", "Mobile"];
   });
   
   // Set initial active filter
-  filterButtons[0].classList.add('bg-gradient-to-r', 'from-emerald-500', 'to-blue-600', 'text-white', 'border-transparent');
+  filterButtons[0].classList.add('bg-gradient-to-r', 'from-purple-500', 'to-blue-600', 'text-white', 'border-transparent');
   filterButtons[0].classList.remove('border-gray-600', 'text-gray-300');
   
   // Project card hover effects

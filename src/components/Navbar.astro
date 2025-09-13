@@ -14,7 +14,7 @@ const navItems = [
   <div class="max-w-7xl mx-auto px-6 py-4">
     <div class="flex justify-between items-center">
       <!-- Logo -->
-      <div class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+      <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
         &lt;Dev/&gt;
       </div>
       
@@ -23,10 +23,10 @@ const navItems = [
         {navItems.map((item) => (
           <a 
             href={item.href}
-            class="nav-link text-gray-300 hover:text-emerald-400 transition-all duration-300 relative group"
+            class="nav-link text-gray-300 hover:text-purple-400 transition-all duration-300 relative group"
           >
             {item.label}
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
           </a>
         ))}
       </div>
@@ -52,7 +52,7 @@ const navItems = [
         {navItems.map((item) => (
           <a 
             href={item.href}
-            class="nav-link text-gray-300 hover:text-emerald-400 transition-colors px-2 py-1"
+            class="nav-link text-gray-300 hover:text-purple-400 transition-colors px-2 py-1"
           >
             {item.label}
           </a>
@@ -106,14 +106,14 @@ const navItems = [
       
       if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
         document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('text-emerald-400');
+          link.classList.remove('text-purple-400');
           link.classList.add('text-gray-300');
         });
         
         const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
         if (activeLink) {
           activeLink.classList.remove('text-gray-300');
-          activeLink.classList.add('text-emerald-400');
+          activeLink.classList.add('text-purple-400');
         }
       }
     });
