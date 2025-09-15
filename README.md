@@ -1,43 +1,26 @@
-# Astro Starter Kit: Minimal
+# Portfolio de Keo
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+Este es mi portfolio personal, creado con Astro y Tailwind CSS.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Tecnologías Utilizadas
 
-## 🚀 Project Structure
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Node.js](https://nodejs.org/)
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🧞 Comandos
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Todos los comandos se ejecutan desde la raíz del proyecto, desde una terminal:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
+| Comando | Acción |
 | :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| `pnpm install` | Instala las dependencias |
+| `pnpm dev` | Inicia el servidor de desarrollo local en `localhost:4321` |
+| `pnpm build` | Construye tu sitio de producción en `./dist/` |
+| `pnpm preview` | Previsualiza tu construcción localmente, antes de desplegar |
 
-## 👀 Want to learn more?
+## 📫 Contacto
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Keoveloper**
+- [GitHub](https://github.com/keoveloper)
