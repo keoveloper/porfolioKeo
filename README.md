@@ -1,3 +1,5 @@
+<img width="1853" height="839" alt="image" src="https://github.com/user-attachments/assets/f099a26e-a954-490f-bee1-eaa341286521" />
+
 # Portfolio de Keo
 
 Este es mi portfolio personal, creado con Astro y Tailwind CSS.
