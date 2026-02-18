@@ -23,7 +23,7 @@ export const POST: APIRoute = async ({ request }) => {
       from: "onboarding@resend.dev", // Remitente controlado por el backend
       to: ["octav0773@gmail.com"], // Destinatario controlado por el backend
       subject: `Portafolio: ${subject}`,
-      reply_to: email, // Para que puedas responder directamente al usuario
+      replyTo: email, // Para que puedas responder directamente al usuario
       html: `
         <p>Has recibido un nuevo mensaje de tu portafolio:</p>
         <p><strong>Nombre:</strong> ${name}</p>
