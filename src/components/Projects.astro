@@ -81,19 +81,20 @@ const categories = ["Todos", "Frontend", "Programas"];
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold mb-6">
         <span class="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-          Mis Proyectos
+          <span data-i18n="projects.title">Mis Proyectos</span>
         </span>
       </h2>
       <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-        Una selección de proyectos que demuestran mis habilidades y experiencia en desarrollo
+        <span data-i18n="projects.subtitle">Una selección de proyectos que demuestran mis habilidades y experiencia en desarrollo</span>
       </p>
       
       <!-- Filter buttons -->
       <div class="flex flex-wrap justify-center gap-4">
-        {categories.map(category => (
-          <button 
+        {categories.map((category, i) => (
+          <button
             class="filter-btn px-6 py-2 rounded-full border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:border-purple-500 hover:text-purple-400 transition-all duration-300"
             data-filter={category}
+            data-i18n={i === 0 ? 'projects.all' : i === 2 ? 'projects.programs' : undefined}
           >
             {category}
           </button>
@@ -154,7 +155,7 @@ const categories = ["Todos", "Frontend", "Programas"];
               </span>
             </div>
             
-            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed" data-i18n={`projects.p${index}desc`}>
               {project.description}
             </p>
 
@@ -192,7 +193,7 @@ const categories = ["Todos", "Frontend", "Programas"];
                 target="_blank"
                 class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-semibold text-center hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
               >
-                Código
+                <span data-i18n="projects.code">Código</span>
               </a>
             </div>
           </div>
@@ -208,7 +209,7 @@ const categories = ["Todos", "Frontend", "Programas"];
         rel="noopener noreferrer"
         class="inline-block px-8 py-3 border border-purple-500/30 rounded-lg font-semibold bg-purple-500/60 hover:border-purple-400 hover:bg-purple-500/70 transition-all duration-300"
       >
-        Ver más proyectos
+        <span data-i18n="projects.viewMore">Ver más proyectos</span>
       </a>
     </div>
   </div>

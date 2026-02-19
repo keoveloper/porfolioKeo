@@ -8,11 +8,11 @@ const currentYear = new Date().getFullYear();
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold mb-6">
         <span class="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-          Contacto
+          <span data-i18n="contact.title">Contacto</span>
         </span>
       </h2>
       <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-        ¿Tienes un proyecto en mente? ¡Trabajemos juntos para hacerlo realidad!
+        <span data-i18n="contact.subtitle">¿Tienes un proyecto en mente? ¡Trabajemos juntos para hacerlo realidad!</span>
       </p>
     </div>
 
@@ -20,10 +20,10 @@ const currentYear = new Date().getFullYear();
       <!-- Contact Info -->
       <div class="fade-in space-y-8">
         <div>
-          <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">¡Hablemos!</h3>
-          <p class="text-gray-400 text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
-            Estoy disponible para proyectos freelance, colaboraciones y oportunidades 
-            de trabajo. No dudes en contactarme si tienes alguna pregunta o simplemente 
+          <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white" data-i18n="contact.heading">¡Hablemos!</h3>
+          <p class="text-gray-400 text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8" data-i18n="contact.description">
+            Estoy disponible para proyectos freelance, colaboraciones y oportunidades
+            de trabajo. No dudes en contactarme si tienes alguna pregunta o simplemente
             quieres conversar sobre tecnología.
           </p>
         </div>
@@ -51,7 +51,7 @@ const currentYear = new Date().getFullYear();
               </svg>
             </div>
             <div>
-              <h4 class="font-semibold text-gray-900 dark:text-white">Teléfono</h4>
+              <h4 class="font-semibold text-gray-900 dark:text-white" data-i18n="contact.phone">Teléfono</h4>
               <a href="https://wa.me/4411186269" class="text-gray-600 dark:text-gray-400 hover:text-purple-400 transition-colors">
                 +52 44 1118 6269
               </a>
@@ -66,7 +66,7 @@ const currentYear = new Date().getFullYear();
               </svg>
             </div>
             <div>
-              <h4 class="font-semibold text-gray-900 dark:text-white">Ubicación</h4>
+              <h4 class="font-semibold text-gray-900 dark:text-white" data-i18n="contact.location">Ubicación</h4>
               <p class="text-gray-600 dark:text-gray-400"><a href="https://maps.app.goo.gl/SXBoQbU77cRiTsJS8">Querétaro, México</a></p>
             </div>
           </div>
@@ -74,7 +74,7 @@ const currentYear = new Date().getFullYear();
 
         <!-- Social Links -->
         <div class="pt-8">
-          <h4 class="font-semibold text-gray-900 dark:text-white mb-4">Sígueme en:</h4>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-4" data-i18n="contact.social">Sígueme en:</h4>
           <div class="flex gap-4">
             <a href="https://www.linkedin.com/in/diego-octavio-campos-valerio-30586b21a/" class="social-contact-link group p-3 rounded-xl bg-blue-500/10 border border-blue-500/25 text-blue-400 hover:bg-blue-500/20 hover:border-blue-400/60 hover:text-blue-300 hover:shadow-lg hover:shadow-blue-500/30" target="_blank">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -97,21 +97,22 @@ const currentYear = new Date().getFullYear();
       <!-- Contact Form -->
       <div class="fade-in">
         <div class="bg-white/80 dark:bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/80 dark:border-gray-700/50">
-          <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Envíame un mensaje</h3>
+          <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white" data-i18n="contact.formTitle">Envíame un mensaje</h3>
           
           <form id="contact-form" class="space-y-6">
             <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" data-i18n="contact.labelName">
                   Nombre *
                 </label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
                   required
                   class="w-full px-4 py-3 bg-gray-50/80 dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
                   placeholder="Tu nombre"
+                  data-i18n-placeholder="contact.placeholderName"
                 />
               </div>
               
@@ -131,30 +132,32 @@ const currentYear = new Date().getFullYear();
             </div>
 
             <div>
-              <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" data-i18n="contact.labelSubject">
                 Asunto *
               </label>
-              <input 
-                type="text" 
-                id="subject" 
-                name="subject" 
+              <input
+                type="text"
+                id="subject"
+                name="subject"
                 required
                 class="w-full px-4 py-3 bg-gray-50/80 dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
                 placeholder="¿En qué puedo ayudarte?"
+                data-i18n-placeholder="contact.placeholderSubject"
               />
             </div>
 
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" data-i18n="contact.labelMessage">
                 Mensaje *
               </label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="6" 
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
                 required
                 class="w-full px-4 py-3 bg-gray-50/80 dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none transition-all duration-300"
                 placeholder="Cuéntame sobre tu proyecto o idea..."
+                data-i18n-placeholder="contact.placeholderMessage"
               ></textarea>
             </div>
 
@@ -162,7 +165,7 @@ const currentYear = new Date().getFullYear();
               type="submit"
               class="w-full px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/25 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900"
             >
-              Enviar Mensaje
+              <span data-i18n="contact.submit">Enviar Mensaje</span>
               <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
               </svg>
@@ -176,7 +179,7 @@ const currentYear = new Date().getFullYear();
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
-                ¡Mensaje enviado exitosamente! Te responderé pronto.
+                <span data-i18n="contact.success">¡Mensaje enviado exitosamente! Te responderé pronto.</span>
               </div>
             </div>
             

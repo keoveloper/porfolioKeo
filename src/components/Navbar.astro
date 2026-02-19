@@ -1,12 +1,12 @@
 
 ---
 const navItems = [
-  { href: '#home', label: 'Inicio' },
-  { href: '#about', label: 'Sobre mí' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experiencia' },
-  { href: '#projects', label: 'Proyectos' },
-  { href: '#contact', label: 'Contacto' }
+  { href: '#home',       label: 'Inicio',      key: 'home' },
+  { href: '#about',      label: 'Sobre mí',    key: 'about' },
+  { href: '#skills',     label: 'Skills',      key: 'skills' },
+  { href: '#experience', label: 'Experiencia', key: 'experience' },
+  { href: '#projects',   label: 'Proyectos',   key: 'projects' },
+  { href: '#contact',    label: 'Contacto',    key: 'contact' },
 ];
 ---
 
@@ -23,7 +23,7 @@ const navItems = [
       <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8 ">
         {navItems.map((item) => (
           <a href={item.href} class="nav-link text-gray-700 dark:text-gray-300 hover:text-purple-400 transition-all duration-300 relative group">
-            {item.label}
+            <span data-i18n={`nav.${item.key}`}>{item.label}</span>
             <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
           </a>
         ))}
@@ -31,6 +31,12 @@ const navItems = [
 
       <!-- Derecha: toggle (desktop) + menú móvil (mobile) -->
       <div class="flex items-center gap-2">
+        <!-- Toggle idioma (desktop) -->
+        <button
+          class="lang-toggle-btn hidden md:flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 font-bold text-sm hover:bg-emerald-500/20 hover:border-emerald-400/60 hover:text-emerald-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:scale-110 transition-all duration-300"
+          aria-label="Cambiar idioma"
+        >EN</button>
+
         <!-- Toggle visible solo en desktop -->
         <button
           id="theme-toggle-desktop"
@@ -59,25 +65,30 @@ const navItems = [
       <div class="flex flex-col space-y-4 pt-4">
         {navItems.map((item) => (
           <a href={item.href} class="nav-link text-gray-700 dark:text-gray-300 hover:text-purple-400 transition-colors px-2 py-1">
-            {item.label}
+            <span data-i18n={`nav.${item.key}`}>{item.label}</span>
           </a>
         ))}
 
-        <!-- Toggle tema dentro del menú móvil -->
-        <div class="pt-2 border-t border-gray-200/50 dark:border-gray-800/50">
+        <!-- Toggles idioma + tema (mobile) — misma fila, centrados -->
+        <div class="pt-2 border-t border-gray-200/50 dark:border-gray-800/50 flex justify-center gap-3">
+          <!-- Idioma -->
           <button
-            class="theme-toggle-btn flex items-center gap-3 px-2 py-1 w-full text-gray-700 dark:text-gray-300 hover:text-purple-400 transition-colors duration-300"
+            class="lang-toggle-btn flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 font-bold text-sm hover:bg-emerald-500/20 hover:border-emerald-400/60 hover:text-emerald-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:scale-110 transition-all duration-300"
+            aria-label="Cambiar idioma"
+          >EN</button>
+
+          <!-- Tema -->
+          <button
+            id="theme-toggle-mobile"
+            class="theme-toggle-btn flex items-center justify-center w-10 h-10 rounded-xl border transition-all duration-300 hover:scale-110 hover:shadow-lg"
             aria-label="Cambiar tema"
           >
-            <!-- Sol (modo oscuro) -->
             <svg class="theme-icon-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
             </svg>
-            <!-- Luna (modo claro) -->
             <svg class="theme-icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
             </svg>
-            <span class="theme-label text-sm"></span>
           </button>
         </div>
       </div>
@@ -107,25 +118,17 @@ const navItems = [
     document.querySelectorAll('.theme-label').forEach(el => {
       el.textContent = isDark ? 'Modo claro' : 'Modo oscuro';
     });
-    // Estilo del botón: amber (sol) en modo oscuro, indigo (luna) en modo claro
-    const btn = document.getElementById('theme-toggle-desktop');
-    if (btn) {
-      if (isDark) {
-        btn.className = btn.className
-          .replace(/bg-\S+\/10|border-\S+\/25|text-\S+400|hover:bg-\S+\/20|hover:border-\S+\/60|hover:text-\S+300|hover:shadow-\S+\/30/g, '').trim();
-        btn.classList.add(
-          'bg-amber-500/10', 'border-amber-500/25', 'text-amber-400',
-          'hover:bg-amber-500/20', 'hover:border-amber-400/60', 'hover:text-amber-300', 'hover:shadow-amber-500/30'
-        );
-      } else {
-        btn.className = btn.className
-          .replace(/bg-\S+\/10|border-\S+\/25|text-\S+400|hover:bg-\S+\/20|hover:border-\S+\/60|hover:text-\S+300|hover:shadow-\S+\/30/g, '').trim();
-        btn.classList.add(
-          'bg-indigo-500/10', 'border-indigo-500/25', 'text-indigo-400',
-          'hover:bg-indigo-500/20', 'hover:border-indigo-400/60', 'hover:text-indigo-300', 'hover:shadow-indigo-500/30'
-        );
-      }
-    }
+    // Estilo de botones tema: amber (sol) en oscuro, indigo (luna) en claro
+    const colorRx = /bg-\S+\/10|border-\S+\/25|text-\S+400|hover:bg-\S+\/20|hover:border-\S+\/60|hover:text-\S+300|hover:shadow-\S+\/30/g;
+    const darkClasses = ['bg-amber-500/10','border-amber-500/25','text-amber-400','hover:bg-amber-500/20','hover:border-amber-400/60','hover:text-amber-300','hover:shadow-amber-500/30'];
+    const lightClasses = ['bg-indigo-500/10','border-indigo-500/25','text-indigo-400','hover:bg-indigo-500/20','hover:border-indigo-400/60','hover:text-indigo-300','hover:shadow-indigo-500/30'];
+
+    ['theme-toggle-desktop', 'theme-toggle-mobile'].forEach(id => {
+      const btn = document.getElementById(id);
+      if (!btn) return;
+      btn.className = btn.className.replace(colorRx, '').trim();
+      btn.classList.add(...(isDark ? darkClasses : lightClasses));
+    });
   }
 
   function applyTheme(isDark: boolean) {

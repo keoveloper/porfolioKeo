@@ -17,6 +17,7 @@ pnpm-debug.log*
 .env
 .env.production
 
+
 # macOS-specific files
 .DS_Store
 
@@ -25,3 +26,7 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Claude / docs locales
+CLAUDE.md
+THEME_SWITCHING.md
