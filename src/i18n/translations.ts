@@ -77,12 +77,17 @@ export const translations = {
       all: "Todos",
       programs: "Programas",
       code: "Código",
+      demo: "Ver Demo",
       viewMore: "Ver más proyectos",
       p0desc:
         "Este proyecto automatiza el juego de Flood Fill utilizando captura de pantalla, procesamiento de imágenes y clics automáticos.",
       p1desc:
-        "Esta es mi propia configuracion de Nvim hecha en Lua con multiples plugins para mejorar la experiencia de desarrollo.",
+        "Aplicación SaaS full-stack para un bar flotante en Xidhí, Querétaro. Permite a los clientes explorar su historia, subir fotos a una galería comunitaria moderada y conocer la ubicación del lugar.",
       p2desc:
+        "Página web para mostrar y promocionar apartamentos en Xidhí, con galería visual, animaciones fluidas y diseño totalmente responsive.",
+      p3desc:
+        "Landing page para un negocio de pintura, enfocada en conversión, con diseño responsive y optimización de imágenes para carga rápida.",
+      p4desc:
         "Es mi propio portafolio web hecho con Astro y Tailwind CSS, diseñado para mostrar mis proyectos y habilidades de manera atractiva y profesional.",
     },
     contact: {
@@ -189,12 +194,17 @@ export const translations = {
       all: "All",
       programs: "Programs",
       code: "Code",
+      demo: "View Demo",
       viewMore: "View more projects",
       p0desc:
         "This project automates the Flood Fill game using screenshot capture, image processing and automatic clicks.",
       p1desc:
-        "This is my own Neovim configuration made in Lua with multiple plugins to improve the development experience.",
+        "Full-stack SaaS application for a floating bar in Xidhí, Querétaro. Lets customers explore its story, upload photos to a moderated community gallery, and find the location.",
       p2desc:
+        "Website to showcase and promote apartments in Xidhí, featuring a visual gallery, smooth animations, and fully responsive design.",
+      p3desc:
+        "Landing page for a painting business, focused on conversion, with responsive design and optimized images for fast loading.",
+      p4desc:
         "This is my own web portfolio made with Astro and Tailwind CSS, designed to showcase my projects and skills in an attractive and professional way.",
     },
     contact: {
