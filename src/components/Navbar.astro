@@ -156,6 +156,15 @@ const navItems = [
     mobileMenu?.classList.toggle('hidden');
   });
 
+  // Cerrar menú móvil al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu || mobileMenu.classList.contains('hidden')) return;
+    const target = e.target as Node;
+    if (!mobileMenu.contains(target) && !mobileMenuBtn?.contains(target)) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+
   // Scroll suave
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', (e) => {
